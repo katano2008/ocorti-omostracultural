@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Quiz interativo da Mostra Cultural do Terceirão 26 sobre O Cortiço, de Aluísio Azevedo.">
+  <title>Quiz | O Cortiço — Mostra Cultural</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="quiz.css">
+  <script src="quiz.js" defer></script>
+  <script src="quiz.js" defer></script>
+</head>
+<body>
+  <!-- A página usa quiz.css, separado do CSS do seu index.html. -->
+  <header class="cabecalho">
+    <a class="voltar" href="index.html" aria-label="Voltar à página inicial">
+      <span aria-hidden="true">←</span> Voltar ao início
+    </a>
+    <span class="identidade">MOSTRA CULTURAL <span aria-hidden="true">✦</span> TERCEIRÃO 26</span>
+  </header>
+
+  <main class="principal">
+    <div class="painel">
+      <!-- TELA 1: BOAS-VINDAS -->
+      <section class="tela introducao" id="tela-inicio" aria-labelledby="titulo-inicio">
+        <p class="sobretitulo">DESAFIO LITERÁRIO</p>
+        <h1 id="titulo-inicio">Você conhece <em>O Cortiço?</em></h1>
+        <p class="subtitulo">Explore os personagens, o Naturalismo e os conflitos sociais da obra de Aluísio Azevedo.</p>
+
+        <div class="informacoes" aria-label="Regras do desafio">
+          <div class="informacao"><strong>10</strong><span>perguntas</span></div>
+          <div class="informacao"><strong>100</strong><span>pontos por acerto</span></div>
+          <div class="informacao"><strong>1</strong><span>resposta por questão</span></div>
+        </div>
+
+        <p class="aviso">Escolha uma alternativa. Depois de responder, você verá a explicação e poderá avançar.</p>
+        <p class="registro" id="recorde-inicial" hidden></p>
+        <button class="botao botao-principal" id="botao-comecar" type="button">Começar desafio <span aria-hidden="true">→</span></button>
+      </section>
+
+      <!-- TELA 2: PERGUNTAS -->
+      <section class="tela perguntas" id="tela-pergunta" aria-labelledby="pergunta-titulo" hidden>
+        <div class="linha-progresso">
+          <span id="texto-progresso">QUESTÃO 01/10</span>
+          <span><strong id="pontos-atuais">0</strong> / 1000 PONTOS</span>
+        </div>
+        <div class="progresso" id="progresso" role="progressbar" aria-label="Progresso do quiz" aria-valuemin="0" aria-valuemax="10" aria-valuenow="1">
+          <div class="progresso-preenchimento" id="progresso-preenchimento"></div>
+        </div>
+        <p class="sobretitulo tema" id="pergunta-tema">PERSONAGENS</p>
+        <h2 id="pergunta-titulo" tabindex="-1">Carregando pergunta...</h2>
+        <div class="alternativas" id="alternativas" role="group" aria-label="Escolha uma alternativa"></div>
+        <div class="feedback" id="feedback" role="status" aria-live="polite" hidden>
+          <strong id="feedback-titulo"></strong>
+          <p id="feedback-texto"></p>
+        </div>
+        <button class="botao botao-principal proxima" id="botao-proxima" type="button" hidden>Próxima pergunta <span aria-hidden="true">→</span></button>
+      </section>
+
+      <!-- TELA 3: RESULTADO -->
+      <section class="tela resultado" id="tela-resultado" aria-labelledby="titulo-resultado" hidden>
+        <p class="sobretitulo">DESAFIO CONCLUÍDO</p>
+        <h2 id="titulo-resultado">Seu resultado</h2>
+        <p class="pontuacao" aria-label="Pontuação final"><span id="pontuacao-final">0</span><small> / 1000</small></p>
+        <p class="placar-complementar" id="quantidade-acertos"></p>
+        <div class="barra-resultado" aria-hidden="true"><div class="barra-resultado-progresso" id="barra-resultado-progresso"></div></div>
+        <h3 class="classificacao" id="classificacao"></h3>
+        <p class="mensagem-resultado" id="mensagem-resultado"></p>
+        <div class="historico" id="historico" hidden>
+          <span id="texto-recorde"></span>
+          <span id="texto-tentativas"></span>
+        </div>
+        <div class="acoes-resultado">
+          <button class="botao botao-principal" id="botao-reiniciar" type="button">Jogar novamente ↻</button>
+          <a class="botao botao-secundario" href="index.html">Voltar ao início</a>
+        </div>
+        <div class="revisao" id="revisao">
+          <h3>Revise suas respostas</h3>
+          <p>Veja o que você acertou e descubra o motivo de cada resposta.</p>
+          <div class="revisao-lista" id="revisao-lista"></div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="rodape">O Cortiço · Aluísio Azevedo · Mostra Cultural 2026</footer>
+</body>
+</html>

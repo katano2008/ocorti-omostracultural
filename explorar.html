@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Uma visita interativa ao universo de O Cortiço, de Aluísio Azevedo. Mostra Cultural 2026.">
+  <title>Explorar O Cortiço | Mostra Cultural 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="explorar.css">
+  <script src="explorar.js" defer></script>
+</head>
+<body>
+  <a class="pular" href="#mapa">Pular para a exploração</a>
+  <header class="cabecalho">
+    <a class="marca" href="index.html">O CORTIÇO <small>Mostra Cultural • 2026</small></a>
+    <nav aria-label="Navegação principal">
+      <a href="index.html">Início</a>
+      <a href="#personagens">Personagens</a>
+      <a href="#biblioteca">Biblioteca</a>
+      <a class="nav-quiz" href="quiz.html">Fazer quiz →</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="apresentacao" aria-labelledby="titulo-explorar">
+      <div class="apresentacao-conteudo">
+        <p class="sobretitulo">TERCEIRÃO 26 • EXPERIÊNCIA LITERÁRIA</p>
+        <h1 id="titulo-explorar">Por dentro<br><em>d'O Cortiço</em></h1>
+        <p>Entre no universo de Aluísio Azevedo. Descubra como os espaços, as relações e as ambições dos moradores revelam os conflitos do Brasil do século XIX.</p>
+        <a class="botao botao-claro" href="#mapa">Começar a exploração ↓</a>
+      </div>
+    </section>
+
+    <section id="mapa" class="secao-mapa" aria-labelledby="titulo-mapa">
+      <div class="secao-cabecalho">
+        <span class="etiqueta">01 • CENÁRIO INTERATIVO</span>
+        <h2 id="titulo-mapa">Cada lugar conta uma história.</h2>
+        <p>Selecione um dos pontos luminosos no cenário. No celular, você também pode usar os botões abaixo da imagem.</p>
+      </div>
+      <div class="mapa-moldura">
+        <div class="mapa-imagem" role="group" aria-label="Mapa artístico do cortiço com quatro pontos interativos">
+          <img src="cortico.svg" alt="Ilustração de um cortiço com edificações e um pátio coletivo" class="cenario" loading="eager">
+          <button type="button" class="ponto ponto-comercio" data-local="comercio" aria-label="Conhecer o comércio de João Romão"><span>1</span></button>
+          <button type="button" class="ponto ponto-patio" data-local="patio" aria-label="Conhecer o pátio coletivo"><span>2</span></button>
+          <button type="button" class="ponto ponto-lavadouro" data-local="lavadouro" aria-label="Conhecer o lavadouro"><span>3</span></button>
+          <button type="button" class="ponto ponto-sobrado" data-local="sobrado" aria-label="Conhecer o sobrado de Miranda"><span>4</span></button>
+          <div class="mapa-legenda">TOQUE NOS PONTOS PARA EXPLORAR</div>
+        </div>
+        <div class="atalhos" aria-label="Acessos aos locais">
+          <button type="button" data-local="comercio">01 · Comércio</button>
+          <button type="button" data-local="patio">02 · Pátio</button>
+          <button type="button" data-local="lavadouro">03 · Lavadouro</button>
+          <button type="button" data-local="sobrado">04 · Sobrado</button>
+        </div>
+        <section class="painel" id="painel-local" aria-live="polite" aria-labelledby="local-titulo">
+          <div class="painel-topo"><span id="local-categoria" class="etiqueta"></span><span id="local-contador" class="visitados"></span></div>
+          <h3 id="local-titulo"></h3>
+          <p id="local-texto"></p>
+          <p class="painel-reflexao"><strong>Para observar:</strong> <span id="local-reflexao"></span></p>
+        </section>
+      </div>
+    </section>
+
+    <section id="personagens" class="secao-personagens" aria-labelledby="titulo-personagens">
+      <div class="secao-cabecalho">
+        <span class="etiqueta">02 • OS MORADORES</span>
+        <h2 id="titulo-personagens">Conheça os personagens</h2>
+        <p>Clique em um nome para descobrir sua trajetória e o que ela revela sobre a sociedade retratada no romance.</p>
+      </div>
+      <div class="grade-personagens" id="grade-personagens"></div>
+      <div class="personagem-detalhe" id="personagem-detalhe" aria-live="polite" tabindex="-1">
+        <span class="etiqueta" id="personagem-tema"></span>
+        <h3 id="personagem-nome"></h3>
+        <p id="personagem-descricao"></p>
+      </div>
+    </section>
+
+    <section class="secao-ideias" aria-labelledby="titulo-ideias">
+      <span class="etiqueta">03 • ALÉM DO ENREDO</span>
+      <h2 id="titulo-ideias">O que o romance nos faz pensar?</h2>
+      <div class="grade-ideias">
+        <article><span>01</span><h3>Ambição</h3><p>A busca de João Romão por fortuna e reconhecimento tem consequências para quem o cerca.</p></article>
+        <article><span>02</span><h3>Desigualdade</h3><p>O contraste entre o cortiço e o sobrado torna visíveis as diferenças de classe e de prestígio.</p></article>
+        <article><span>03</span><h3>Naturalismo</h3><p>O ambiente, as condições materiais e os impulsos humanos são centrais na forma como a história é narrada.</p></article>
+      </div>
+    </section>
+
+    <section id="biblioteca" class="secao-biblioteca" aria-labelledby="titulo-biblioteca">
+      <div class="livro-icone" aria-hidden="true">✦<br>O<br>CORTIÇO</div>
+      <div>
+        <span class="etiqueta">04 • BIBLIOTECA DIGITAL</span>
+        <h2 id="titulo-biblioteca">Leia a obra completa</h2>
+        <p>Quer ir além da visita? Leia <em>O Cortiço</em>, publicado em 1890, e aprofunde-se na narrativa de Aluísio Azevedo.</p>
+        <a class="botao botao-escuro" href="https://drive.google.com/file/d/0BwGHnXDgyRQOYjBKTFVYdWVRcVk/view?resourcekey=0-FmeTvLPgj6RK_ltYSaSZPA" target="_blank" rel="noopener noreferrer">Abrir o livro em PDF ↗</a>
+      </div>
+    </section>
+
+    <section class="secao-desafio" aria-labelledby="titulo-desafio">
+      <span class="etiqueta">VOCÊ CHEGOU AO FINAL DA EXPLORAÇÃO</span>
+      <h2 id="titulo-desafio">Pronto para o desafio?</h2>
+      <p>Agora que conhece os lugares, as personagens e os temas da obra, teste seus conhecimentos em dez perguntas.</p>
+      <a class="botao botao-claro" href="quiz.html">Iniciar QUIZ →</a>
+    </section>
+  </main>
+  <footer class="rodape">
+    <span>O CORTIÇO · MOSTRA CULTURAL 2026</span>
+    <div class="redes">
+      <a href="https://www.instagram.com/terceiraovx2026/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da turma">◎ Instagram</a>
+      <a href="https://www.tiktok.com/@terceiraovx2026" target="_blank" rel="noopener noreferrer" aria-label="TikTok da turma">♪ TikTok</a>
+    </div>
+  </footer>
+</body>
+</html>
